@@ -46,7 +46,7 @@ sub main {
 sub ps_tree_to_name_tree {
     my ($ps_tree, $name_tree, $pid_name) = @_;
 
-    for my $pid (keys $ps_tree) {
+    for my $pid (keys %$ps_tree) {
         my $name = $pid_name->{$pid} || '0';
         if (ref $ps_tree->{$pid} eq "HASH") {
             $name_tree->{$name} = {};
